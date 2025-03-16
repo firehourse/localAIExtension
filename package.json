@@ -1,0 +1,43 @@
+{
+  "name": "devorkAiPrompt",
+  "publisher": "yourname",
+  "version": "0.0.1",
+  "description": "A VS Code extension that provides an AI Prompt panel in the sidebar.",
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -w -p ."
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.1",
+    "@types/vscode": "^1.98.0",
+    "node-fetch": "^2.6.7",
+    "typescript": "^4.9.5"
+  },
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "activationEvents": [
+    "onView:devorkAiPrompt_sidebarView"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "devorkAiPrompt_sidebarContainer",
+          "title": "AI Prompt",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "devorkAiPrompt_sidebarContainer": [
+        {
+          "type": "webview",
+          "id": "devorkAiPrompt_sidebarView",
+          "name": "Devork AI Prompt"
+        }
+      ]
+    }
+  }
+}
